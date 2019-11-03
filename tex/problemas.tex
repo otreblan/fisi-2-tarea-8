@@ -20,15 +20,195 @@ dimensiones se muestran en la siguiente figura.
 Determina la resistencia del cilindro $(1)$ y $(2)$.
 $L=20cm$ y $d=0.5cm$.
 
+\begin{enumerate}[1)]
+	\item Un cilindro de la $L$ de diámetro $d$, con un hueco en el centro
+		de $\frac{d}{2}$ de diámetro
+		\begin{align*}
+			R &= \rho \frac{L}{A-A_h}\\
+			R &= \rho \frac{0.2m}{A-A_h}\\
+			R &= \rho \frac{0.2m}{ \frac{d^2}{4} - \frac{d^2}{16} }\\
+			R &= \rho \frac{0.2m}{ \frac{3d^2}{16} }\\
+			R &= 0.0175 *\cancel{10^{-6}}\Omega m \frac{3.2m*\cancel{10^6}}{3*25m^2}\\
+			R &= 7.47 *10^{-4}\Omega
+		\end{align*}
+	\item Un cilindro de la $L$ de diámetro $d$.
+		\begin{align*}
+			R &= \rho \frac{L}{A}\\
+			R &= \rho \frac{0.2m}{ \frac{d^2}{4}}\\
+			R &= 0.0175 *\cancel{10^{-6}}\Omega m \frac{0.4m*\cancel{10^6}}{25m^2}\\
+			R &= 2.8 *10^{-4}\Omega
+		\end{align*}
+\end{enumerate}
+
 \setcounter{subsection}{6}
 \subsection{}%
 
 Calcula la resistencia eléctrica equivalente entre los bornes $A$ y $B$.
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+	[
+		circuit ee IEC,
+		set resistor graphic=var resistor IEC graphic
+	]
+	\draw (0,0) to[resistor={info=$2\Omega$}] ++(0,2)
+		to[resistor={info=$5\Omega$}] ++(2,0)
+		to[resistor={info=$8\Omega$}] ++(0,-2)
+		to[resistor={info=$1\Omega$}] ++(-2,0);
+
+	\draw (2,2) to[resistor={info'=$1\Omega$}] ++(4,0)
+		to[resistor={info'=$5\Omega$}] ++(-2,2)
+		to[resistor={info=$3\Omega$}] ++(-2,-2)
+		to[resistor={info=$12\Omega$}] ++(0,2)
+		to[resistor={info=$2\Omega$}] ++(2,0);
+
+	\draw (2,4) -- ++(0,1) node [contact] {} node[above] {$A$};
+	\draw (2,0) -- ++(2,0) node [contact] {} node[right] {$B$};
+	\end{tikzpicture}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+	[
+		circuit ee IEC,
+		set resistor graphic=var resistor IEC graphic
+	]
+	\draw (0,0) to[resistor={info=$8\Omega$}] ++(0,2)
+		-- ++(2,0)
+		to[resistor={info=$8\Omega$}] ++(0,-2)
+		-- ++(-2,0);
+
+	\draw (2,2) -- ++(4,0)
+		to[resistor={info'=$6\Omega$}] ++(-2,2)
+		to[resistor={info=$3\Omega$}] ++(-2,-2)
+		to[resistor={info=$12\Omega$}] ++(0,2)
+		to[resistor={info=$2\Omega$}] ++(2,0);
+
+	\draw (2,4) -- ++(0,1) node [contact] {} node[above] {$A$};
+	\draw (2,0) -- ++(2,0) node [contact] {} node[right] {$B$};
+	\end{tikzpicture}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+	[
+		circuit ee IEC,
+		set resistor graphic=var resistor IEC graphic
+	]
+	\draw (2,0) to[resistor={info=$4\Omega$}] ++(0,2);
+
+	\draw (2,2)
+		to[resistor={info'=$2\Omega$}] ++(2,2)
+		to[resistor={info'=$2\Omega$}] ++(-2,0)
+		to[resistor={info'=$12\Omega$}] ++(0,-2);
+
+	\draw (2,4) -- ++(0,1) node [contact] {} node[above] {$A$};
+	\draw (2,0) -- ++(2,0) node [contact] {} node[right] {$B$};
+	\end{tikzpicture}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+	[
+		circuit ee IEC,
+		set resistor graphic=var resistor IEC graphic
+	]
+	\draw (2,0) to[resistor={info=$4\Omega$}] ++(0,2);
+
+	\draw (2,2)
+		to[resistor={info'=$12\Omega$}] ++(0,2)
+		-- ++(2,0)
+		to[resistor={info=$4\Omega$}] ++(0,-2)
+		-- ++(-2,0);
+
+	\draw (2,4) -- ++(0,1) node [contact] {} node[above] {$A$};
+	\draw (2,0) -- ++(2,0) node [contact] {} node[right] {$B$};
+	\end{tikzpicture}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+	[
+		circuit ee IEC,
+		set resistor graphic=var resistor IEC graphic
+	]
+	\draw (2,0) to[resistor={info=$4\Omega$}] ++(0,2);
+
+	\draw (2,2) to[resistor={info'=$3\Omega$}] ++(0,2);
+
+	\draw (2,4) -- ++(0,1) node [contact] {} node[above] {$A$};
+	\draw (2,0) -- ++(2,0) node [contact] {} node[right] {$B$};
+	\end{tikzpicture}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+	[
+		circuit ee IEC,
+		set resistor graphic=var resistor IEC graphic
+	]
+	\draw (2,0) to[resistor={info=$7\Omega$}] ++(0,4);
+
+	\draw (2,4) -- ++(0,1) node [contact] {} node[above] {$A$};
+	\draw (2,0) -- ++(2,0) node [contact] {} node[right] {$B$};
+	\end{tikzpicture}
+\end{figure}
 
 \setcounter{subsection}{15}
 \subsection{}%
 
 A partir del circuito mostrado, determina $I$ si se sabe que $V_{AB}=50V$.
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+	[
+		circuit ee IEC,
+		set resistor graphic=var resistor IEC graphic
+	]
+	\draw (0,0)++(0,4) to[battery={info'=$\mathcal{E}$}] (0,0);
+	\draw (0,0) -- (6,0);
+
+	\draw (6,0) to[resistor={info'=$5\Omega$}] (6,2);
+	\draw (4,0) to[resistor={info'=$10\Omega$}] ++(0,2);
+	\draw (2,0) to[resistor={info=$20\Omega$}] ++(0,2);
+	\draw (2,2) to[resistor={info'=$10\Omega$}] ++(0,2);
+	\draw (0,4) to[resistor={info=$R$, info'=$I$, direction info'={->}}] ++(2,0);
+
+	\draw(6,2) -- ++(-4,0);
+
+	\node [contact] at (2,4) {};
+	\draw (2,4) node [above right] {$M$};
+	\node [contact] at (6,2) {};
+	\draw (6,2) node [above right] {$A$};
+	\node [contact] at (6,0) {};
+	\draw (6,0) node [below right] {$B$};
+	\end{tikzpicture}
+\end{figure}
+
+
+\begin{align*}
+	V_{AB} &= 50V\\
+	\\
+	R_{AB} &=
+	\left(
+		\frac{1}{20}
+		+ \frac{1}{10}
+		+ \frac{1}{5}
+	\right)^{-1}
+	\Omega\\
+	R_{AB} &= \frac{20}{7} \Omega\\
+	\\
+	I &= I_{AB} = \frac{V_{AB}}{R_{AB}}\\
+	I &= \frac{50V*7}{20\Omega}\\
+	I &= \frac{35}{2} A
+\end{align*}
+
 
 \end{document}
 %}}}
